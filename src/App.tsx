@@ -16,14 +16,6 @@ export const App = () => {
 
   return (
     <main>
-      <details>
-        <summary>Bots technical test instructions</summary>
-        Below is a form component with two basic inputs and a button. Please
-        create components and style them in line with the designs. You can use
-        any type of styling tools. All the assets you should need are in the public folder, we've add the fonts to the stylesheet to get you going. Design link:
-        <a href="https://www.figma.com/file/cJBFVFmmCgODEdq4s3qekm/Front-end-Design-Task?type=design&node-id=3%3A557&mode=dev">https://www.figma.com/file/cJBFVFmmCgODEdq4s3qekm/Front-end-Design-Task?type=design&node-id=3%3A557&mode=dev</a>
-      </details>
-
       <form onSubmit={handleLogin}>
         <h1>Login</h1>
         <p>Please sign in to continue</p>
