@@ -1,0 +1,45 @@
+
+@font-face {
+  font-family: 'LibreBaskerville';
+  src: url('../public/LibreBaskerville-Bold.woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'sf';
+  src: url('../public/sf-ui-display-medium-58646be638f96.woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'sf';
+  src: url('../public/sf-ui-display-bold-58646a511e3d9.woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
+h1 {
+  font-family: LibreBaskerville;
+}
+
+
+* {
+  font-family: sf;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 1rem;
+  font-family: system-ui, sans-serif;
+  color: black;
+  background-color: white;
+}
+
+h1 {
+  font-weight: 800;
+  font-size: 1.5rem;
+}
