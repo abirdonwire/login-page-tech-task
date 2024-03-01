@@ -1,65 +1,36 @@
-import { useState } from 'react';
+import { useState, useEffect } from "react";
+import { Header } from "./components/Header/Header";
+import { LoginForm } from "./components/LoginForm/LoginForm";
+import { Footer } from "./components/Footer/Footer";
 
-import './style.css';
-
-const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+import "./style.css";
 
 export const App = () => {
-  const [form, setForm] = useState({ username: '', password: '' });
+  const [isSmallScreen, setIsSmallScreen] = useState<boolean>(false);
 
-  const handleLogin = (e) => {
-    e.preventDefault();
-  };
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth < 904);
+    };
 
-  const canSubmit = form.username !== '' && form.password !== '';
-  const hasError = form.password !== '' && !form.password.match(passwordRegex);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <main>
-      <form onSubmit={handleLogin}>
-        <h1>Login</h1>
-        <p>Please sign in to continue</p>
-        <label>
-          Username:
-          <input
-            type="text"
-            name="username"
-            value={form.username}
-            onChange={(e) =>
-              setForm((prev) => ({ ...prev, username: e.target.value }))
-            }
-          />
-        </label>
-        <br />
-        <label>
-          Password:
-          <input
-            type="password"
-            value={form.password}
-            onChange={(e) =>
-              setForm((prev) => ({ ...prev, password: e.target.value }))
-            }
-          />
-          {hasError && (
-            <ul>
-              <li>At least 8 characters</li>
-              <li>Contains at least one lowercase letter</li>
-              <li>Contains at least one uppercase letter</li>
-              <li>Contains at least one digit</li>
-            </ul>
-          )}
-        </label>
-        <br />
-        <a href="#">Forgot password</a>
-        <br />
-        <button disabled={!canSubmit || hasError} type="submit">
-          Login
-        </button>
-        <p>
-          For access and support please email <a href="#">support@DCM.com</a>
-        </p>
-        <p>DCM Origination Technologies Ltd 2023</p>
-      </form>
+      <Header isSmallScreen={isSmallScreen} />
+      <LoginForm />
+      <Footer />
+      {isSmallScreen ? null : (
+        <img
+          src="/BG.svg"
+          className="background"
+          alt="background DCM logo"
+          role="presentation"
+        />
+      )}
     </main>
   );
 };
