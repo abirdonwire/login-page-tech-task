@@ -1,8 +1,8 @@
-import "./Footer.css";
+import styles from "./Footer.module.css";
 
 export const Footer: React.FC = () => {
   return (
-    <footer>
+    <footer className={styles.footer}>
       <address>
         <p>
           For access and support please email{" "}

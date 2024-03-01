@@ -1,4 +1,4 @@
-footer {
+.footer {
     position: fixed;
     left: 0;
     bottom: 0;
@@ -9,7 +9,7 @@ footer {
     display: flex;
 }
 
-footer p {
+.footer p {
     font-family: 'sf', sans-serif;
     font-size: 14px;
     font-weight: 300;
@@ -20,11 +20,11 @@ footer p {
     font-style: normal;
 }
 
-footer p:first-of-type {
+.footer p:first-of-type {
     padding: 0 10 0 0;
 }
 
-footer a {
+.footer a {
     font-size: 14px;
     font-weight: 600;
     line-height: 17px;
@@ -36,7 +36,7 @@ footer a {
 /* Media Queries */
 
 @media screen and (min-width: 600px) and (max-width: 904px) {
-    footer {
+    .footer {
         display: flex;
         flex-direction: column;
         margin: 0;
