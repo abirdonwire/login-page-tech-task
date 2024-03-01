@@ -1,3 +1,12 @@
+:root {
+  --color-main: #868250;
+  --color-secondary: #A5A3A0;
+  --color-secondary-text: #C9C7B6;
+  --color-highlight: #89887C;
+  --color-warning: #BA002D;
+  --color-primary-button-text: #FFFFFF;
+  --color-footer-text: #3A3822;
+}
 
 @font-face {
   font-family: 'LibreBaskerville';
@@ -21,6 +30,7 @@
   font-style: normal;
 }
 
+
 h1 {
   font-family: LibreBaskerville;
 }
@@ -40,6 +50,23 @@ body {
 }
 
 h1 {
-  font-weight: 800;
-  font-size: 1.5rem;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: 0px;
+  color: var(--color-main);
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+/*Background*/
+
+.background {
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
