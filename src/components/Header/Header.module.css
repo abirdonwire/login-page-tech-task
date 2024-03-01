@@ -1,18 +1,18 @@
-header {
+.header {
     width: 100vw;
 }
 
-.main-logo {
+.mainLogo {
     width: 109.84px;
     height: 45px;
 }
 
-.main-logo-small {
+.mainLogoSmall {
     width: 57.91px;
     height: 81.02px;
 }
 
-.main-logo,
-.main-logo-small {
+.mainLogo,
+.mainLogoSmall {
     margin: 40 0 0 50;
 }
