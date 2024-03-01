@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./LoginForm.css";
+import styles from "./LoginForm.module.css";
 
 type userCredentials = {
   emailAddress: string;
@@ -20,13 +20,13 @@ export const LoginForm: React.FC = () => {
   };
 
   return (
-    <div className="form-container">
+    <div className={styles.formContainer}>
       <form
         onSubmit={handleLogin}
-        className={hasError ? "login-form-error" : "login-form"}
+        className={hasError ? `${styles.loginFormError}` : `${styles.loginForm}`}
         noValidate
       >
-        <div className="login-form-heading">
+        <div className={styles.loginFormHeading}>
           <h1>Log in</h1>
           <p>Please sign in to continue.</p>
         </div>
@@ -62,7 +62,7 @@ export const LoginForm: React.FC = () => {
             aria-describedby="minimumCharacterHint lowercaseLetterHint uppercaseLetterHint minimumDigitHint"
           />
           {hasError && (
-            <ul className="login-form-error-text">
+            <ul className={styles.loginFormErrorText}>
               <li id="minimumCharacterHint">At least 8 characters</li>
               <li id="lowercaseLetterHint">
                 Contains at least one lowercase letter
@@ -75,14 +75,14 @@ export const LoginForm: React.FC = () => {
           )}
         </label>
         <br />
-        <a href="#" className="forgot-password-link">
+        <a href="#" className={styles.forgotPasswordLink}>
           Forgot password
         </a>
         <br />
         <button
           disabled={!canSubmit || hasError}
           type="submit"
-          className="login-form-submit-btn"
+          className={styles.loginFormSubmitButton}
         >
           Log in
         </button>
